@@ -1,26 +1,29 @@
 $(function() {
   $.ajax({
-    url:https://www.codeschool.com/users/2653763.json,
+    url:'https://www.codeschool.com/users/2653763.json',
     dataType: 'jsonp',
-    success: function(response{
-      console.log('response', response.courses.completed)
+    success: function(response){
       addCourses(response.courses.completed);
-    })
+    }
   });
-function addCourses(courses)  {
 
-  var $badges = $('badges');
+  function addCourses(courses)  {
 
-  courses.forEach(function(course){
-    var $course = $('<div />', {
-      'class': 'course'
-    }).appendTo($badges);
+    var $badges = $('badges');
 
-    $('<h3 />', ) {
-      text: course.title
-    }).appendTo($course);
+    courses.forEach(function(course){
 
-  })
-}
+      var $course = $('<div />', {
+        'class': 'course'
+      }).appendTo($badges);
 
-});
+      $('<h3 />',  {
+        text: course.title
+      }).appendTo($course);
+
+    })
+
+  }
+
+
+  });
